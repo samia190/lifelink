@@ -66,15 +66,14 @@ services:
       - key: CORS_ORIGINS
         sync: false  # Comma-separated frontend URLs
 
-  # ─── Frontend (Next.js SSR) ───
+  # ─── Frontend (Next.js SSR via Docker) ───
   - type: web
     name: lifelink-web
-    runtime: node
+    runtime: docker
     region: frankfurt
     plan: starter
     rootDir: frontend
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    dockerfilePath: ./Dockerfile
     healthCheckPath: /
     envVars:
       - key: NODE_ENV

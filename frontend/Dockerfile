@@ -2,14 +2,18 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Accept Render env vars as build args (Render passes them automatically)
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_TELEMETRY_DISABLED=1
+
 COPY package.json package-lock.json* next.config.js tailwind.config.js postcss.config.js tsconfig.json ./
-RUN npm ci
+RUN npm ci --ignore-scripts && npm rebuild
 
 COPY src ./src/
 COPY public ./public/
 COPY logo ./logo/
 
-ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
 FROM node:20-alpine AS runner
