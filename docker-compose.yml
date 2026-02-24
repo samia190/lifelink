@@ -1,20 +1,20 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:16-alpine
+  mongo:
+    image: mongo:7
     container_name: lifelink-db
     restart: unless-stopped
     environment:
-      POSTGRES_DB: lifelink
-      POSTGRES_USER: lifelink_user
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-lifelink_secure_2024}
+      MONGO_INITDB_ROOT_USERNAME: lifelink_user
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD:-lifelink_secure_2024}
+      MONGO_INITDB_DATABASE: lifelink
     ports:
-      - "5432:5432"
+      - "27017:27017"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mongo_data:/data/db
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U lifelink_user -d lifelink"]
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -41,7 +41,7 @@ services:
     container_name: lifelink-backend
     restart: unless-stopped
     depends_on:
-      postgres:
+      mongo:
         condition: service_healthy
       redis:
         condition: service_healthy
@@ -50,7 +50,7 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: postgresql://lifelink_user:${DB_PASSWORD:-lifelink_secure_2024}@postgres:5432/lifelink
+      DATABASE_URL: mongodb://lifelink_user:${DB_PASSWORD:-lifelink_secure_2024}@mongo:27017/lifelink?authSource=admin
       REDIS_URL: redis://:${REDIS_PASSWORD:-lifelink_redis_2024}@redis:6379
       NODE_ENV: production
 
@@ -82,5 +82,5 @@ services:
       - ./nginx/ssl:/etc/nginx/ssl:ro
 
 volumes:
-  postgres_data:
+  mongo_data:
   redis_data:

@@ -1,6 +1,6 @@
 // ===========================================
 // LIFELINK MENTAL MEDICAL CENTER
-// Prisma Database Schema
+// Prisma Database Schema (MongoDB)
 // ===========================================
 
 generator client {
@@ -8,7 +8,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
@@ -131,7 +131,7 @@ enum CorporateContractStatus {
 // ============ USER & AUTH ============
 
 model User {
-  id                String          @id @default(uuid())
+  id                String          @id @default(auto()) @map("_id") @db.ObjectId
   email             String          @unique
   phone             String?         @unique
   passwordHash      String
@@ -164,8 +164,8 @@ model User {
 }
 
 model Profile {
-  id            String    @id @default(uuid())
-  userId        String    @unique
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String    @unique @db.ObjectId
   firstName     String
   lastName      String
   dateOfBirth   DateTime?
@@ -190,8 +190,8 @@ model Profile {
 }
 
 model RefreshSession {
-  id          String   @id @default(uuid())
-  userId      String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
   token       String   @unique
   userAgent   String?
   ipAddress   String?
@@ -207,10 +207,10 @@ model RefreshSession {
 // ============ PATIENT ============
 
 model Patient {
-  id                    String            @id @default(uuid())
-  userId                String            @unique
+  id                    String            @id @default(auto()) @map("_id") @db.ObjectId
+  userId                String            @unique @db.ObjectId
   patientNumber         String            @unique
-  assignedDoctorId      String?
+  assignedDoctorId      String?           @db.ObjectId
   insuranceProvider     String?
   insurancePolicyNumber String?
   insuranceExpiryDate   DateTime?
@@ -251,8 +251,8 @@ model Patient {
 // ============ DOCTOR / PROVIDER ============
 
 model Doctor {
-  id                  String          @id @default(uuid())
-  userId              String          @unique
+  id                  String          @id @default(auto()) @map("_id") @db.ObjectId
+  userId              String          @unique @db.ObjectId
   licenseNumber       String          @unique
   specialization      String[]
   qualifications      String[]
@@ -280,8 +280,8 @@ model Doctor {
 }
 
 model AvailabilitySlot {
-  id          String   @id @default(uuid())
-  doctorId    String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  doctorId    String   @db.ObjectId
   dayOfWeek   Int      // 0-6 (Sunday-Saturday)
   startTime   String   // HH:mm format
   endTime     String   // HH:mm format
@@ -298,9 +298,9 @@ model AvailabilitySlot {
 // ============ APPOINTMENTS ============
 
 model Appointment {
-  id                String              @id @default(uuid())
-  patientId         String
-  doctorId          String
+  id                String              @id @default(auto()) @map("_id") @db.ObjectId
+  patientId         String              @db.ObjectId
+  doctorId          String              @db.ObjectId
   appointmentDate   DateTime
   startTime         DateTime
   endTime           DateTime
@@ -335,9 +335,9 @@ model Appointment {
 // ============ TELEHEALTH ============
 
 model TelehealthSession {
-  id                String          @id @default(uuid())
-  appointmentId     String          @unique
-  doctorId          String
+  id                String          @id @default(auto()) @map("_id") @db.ObjectId
+  appointmentId     String          @unique @db.ObjectId
+  doctorId          String          @db.ObjectId
   roomId            String          @unique
   roomToken         String?
   status            SessionStatus   @default(SCHEDULED)
@@ -363,9 +363,9 @@ model TelehealthSession {
 // ============ MEDICAL RECORDS ============
 
 model MedicalRecord {
-  id              String   @id @default(uuid())
-  patientId       String
-  doctorId        String
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  patientId       String   @db.ObjectId
+  doctorId        String   @db.ObjectId
   title           String
   description     String
   diagnosis       String?
@@ -390,8 +390,8 @@ model MedicalRecord {
 }
 
 model MedicalAttachment {
-  id              String        @id @default(uuid())
-  medicalRecordId String
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  medicalRecordId String        @db.ObjectId
   fileName        String
   fileUrl         String
   fileType        String
@@ -404,10 +404,10 @@ model MedicalAttachment {
 }
 
 model SessionNote {
-  id                String    @id @default(uuid())
-  appointmentId     String    @unique
-  patientId         String
-  doctorId          String
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  appointmentId     String    @unique @db.ObjectId
+  patientId         String    @db.ObjectId
+  doctorId          String    @db.ObjectId
   subjective        String?
   objective         String?
   assessment        String?
@@ -432,9 +432,9 @@ model SessionNote {
 }
 
 model Prescription {
-  id              String    @id @default(uuid())
-  patientId       String
-  doctorId        String
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  patientId       String    @db.ObjectId
+  doctorId        String    @db.ObjectId
   medication      String
   dosage          String
   frequency       String
@@ -457,8 +457,8 @@ model Prescription {
 }
 
 model TreatmentPlan {
-  id              String    @id @default(uuid())
-  patientId       String
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  patientId       String    @db.ObjectId
   title           String
   description     String
   goals           Json
@@ -478,8 +478,8 @@ model TreatmentPlan {
 }
 
 model ProgressTracking {
-  id          String   @id @default(uuid())
-  patientId   String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  patientId   String   @db.ObjectId
   metricName  String
   metricValue Float
   notes       String?
@@ -492,8 +492,8 @@ model ProgressTracking {
 }
 
 model PatientDocument {
-  id          String   @id @default(uuid())
-  patientId   String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  patientId   String   @db.ObjectId
   title       String
   description String?
   fileName    String
@@ -512,8 +512,8 @@ model PatientDocument {
 // ============ RISK & CRISIS ============
 
 model RiskAlert {
-  id          String    @id @default(uuid())
-  patientId   String
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  patientId   String    @db.ObjectId
   alertType   AlertType
   riskLevel   RiskLevel
   description String
@@ -537,8 +537,8 @@ model RiskAlert {
 // ============ BILLING & PAYMENTS ============
 
 model Payment {
-  id                String          @id @default(uuid())
-  appointmentId     String?         @unique
+  id                String          @id @default(auto()) @map("_id") @db.ObjectId
+  appointmentId     String?         @unique @db.ObjectId
   amount            Float
   currency          String          @default("KES")
   method            PaymentMethod
@@ -564,8 +564,8 @@ model Payment {
 }
 
 model BillingRecord {
-  id          String    @id @default(uuid())
-  patientId   String
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  patientId   String    @db.ObjectId
   description String
   amount      Float
   currency    String    @default("KES")
@@ -581,10 +581,10 @@ model BillingRecord {
 }
 
 model Invoice {
-  id            String          @id @default(uuid())
+  id            String          @id @default(auto()) @map("_id") @db.ObjectId
   invoiceNumber String          @unique
-  patientId     String?
-  corporateId   String?
+  patientId     String?         @db.ObjectId
+  corporateId   String?         @db.ObjectId
   items         Json
   subtotal      Float
   tax           Float           @default(0)
@@ -607,14 +607,14 @@ model Invoice {
 // ============ CORPORATE WELLNESS ============
 
 model CorporateAccount {
-  id                  String                  @id @default(uuid())
+  id                  String                  @id @default(auto()) @map("_id") @db.ObjectId
   companyName         String
   industry            String?
   contactPerson       String
   contactEmail        String
   contactPhone        String
   address             String?
-  managerId           String?                 @unique
+  managerId           String?                 @unique @db.ObjectId
   contractStatus      CorporateContractStatus @default(DRAFT)
   contractStartDate   DateTime?
   contractEndDate     DateTime?
@@ -635,9 +635,9 @@ model CorporateAccount {
 }
 
 model CorporateEmployee {
-  id              String            @id @default(uuid())
-  corporateId     String
-  patientId       String            @unique
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  corporateId     String            @db.ObjectId
+  patientId       String            @unique @db.ObjectId
   employeeId      String?
   department      String?
   isActive        Boolean           @default(true)
@@ -651,8 +651,8 @@ model CorporateEmployee {
 }
 
 model CorporateUsageReport {
-  id              String            @id @default(uuid())
-  corporateId     String
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  corporateId     String            @db.ObjectId
   reportMonth     DateTime
   totalSessions   Int               @default(0)
   uniqueEmployees Int               @default(0)
@@ -668,7 +668,7 @@ model CorporateUsageReport {
 // ============ AI CHAT & INTAKE ============
 
 model ChatConversation {
-  id          String        @id @default(uuid())
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
   sessionId   String        @unique
   userId      String?
   isAnonymous Boolean       @default(true)
@@ -682,9 +682,9 @@ model ChatConversation {
 }
 
 model ChatMessage {
-  id              String            @id @default(uuid())
-  conversationId  String
-  userId          String?
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  conversationId  String            @db.ObjectId
+  userId          String?           @db.ObjectId
   role            String            // "user", "assistant", "system"
   content         String
   sentimentScore  Float?
@@ -699,8 +699,8 @@ model ChatMessage {
 }
 
 model IntakeResponse {
-  id          String    @id @default(uuid())
-  patientId   String?
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  patientId   String?   @db.ObjectId
   sessionId   String
   responses   Json
   riskScore   Float     @default(0)
@@ -719,7 +719,7 @@ model IntakeResponse {
 // ============ WEBINAR & TEACHING ============
 
 model Webinar {
-  id              String          @id @default(uuid())
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
   title           String
   description     String
   instructorName  String
@@ -751,8 +751,8 @@ model Webinar {
 }
 
 model WebinarRegistration {
-  id            String    @id @default(uuid())
-  webinarId     String
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  webinarId     String    @db.ObjectId
   email         String
   name          String
   phone         String?
@@ -769,8 +769,8 @@ model WebinarRegistration {
 }
 
 model WebinarComment {
-  id          String   @id @default(uuid())
-  webinarId   String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  webinarId   String   @db.ObjectId
   authorName  String
   content     String
   isApproved  Boolean  @default(false)
@@ -787,7 +787,7 @@ model WebinarComment {
 // ============ SUBSCRIPTIONS ============
 
 model Subscription {
-  id              String            @id @default(uuid())
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
   userId          String
   plan            SubscriptionPlan
   amount          Float
@@ -811,8 +811,8 @@ model Subscription {
 // ============ NOTIFICATIONS ============
 
 model Notification {
-  id          String            @id @default(uuid())
-  userId      String
+  id          String            @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String            @db.ObjectId
   type        NotificationType
   title       String
   message     String
@@ -828,9 +828,9 @@ model Notification {
 }
 
 model Message {
-  id          String   @id @default(uuid())
-  senderId    String
-  receiverId  String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  senderId    String   @db.ObjectId
+  receiverId  String   @db.ObjectId
   subject     String?
   content     String
   isRead      Boolean  @default(false)
@@ -846,7 +846,7 @@ model Message {
 // ============ BLOG ============
 
 model BlogPost {
-  id              String    @id @default(uuid())
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
   title           String
   slug            String    @unique
   excerpt         String?
@@ -870,7 +870,7 @@ model BlogPost {
 // ============ SERVICES ============
 
 model Service {
-  id              String    @id @default(uuid())
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
   name            String
   slug            String    @unique
   description     String
@@ -892,8 +892,8 @@ model Service {
 // ============ AUDIT & LOGGING ============
 
 model AuditLog {
-  id          String   @id @default(uuid())
-  userId      String?
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String?  @db.ObjectId
   action      String
   entity      String
   entityId    String?
@@ -912,7 +912,7 @@ model AuditLog {
 }
 
 model SystemLog {
-  id          String   @id @default(uuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   level       String   // info, warn, error, critical
   source      String
   message     String
@@ -928,7 +928,7 @@ model SystemLog {
 // ============ AUTOMATION ============
 
 model AutomationTask {
-  id            String    @id @default(uuid())
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
   name          String
   type          String
   schedule      String?   // cron expression
@@ -947,7 +947,7 @@ model AutomationTask {
 // ============ ANALYTICS ============
 
 model AnalyticsEvent {
-  id          String   @id @default(uuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   eventType   String
   source      String?
   userId      String?
@@ -963,7 +963,7 @@ model AnalyticsEvent {
 }
 
 model RevenueRecord {
-  id          String   @id @default(uuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   date        DateTime
   amount      Float
   currency    String   @default("KES")

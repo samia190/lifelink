@@ -768,3 +768,143 @@ Please make sure your database server is running at `localhost:5432`.
     at listenInCluster (node:net:1997:12)
     at Server.listen (node:net:2102:7)
     at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 11:56:47 [error]: PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.
+  -->  schema.prisma:12
+   | 
+11 |   provider = "postgresql"
+12 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 11:56:47 [error]: PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.
+  -->  schema.prisma:12
+   | 
+11 |   provider = "postgresql"
+12 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 11:56:48 [error]: PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.
+  -->  schema.prisma:12
+   | 
+11 |   provider = "postgresql"
+12 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 11:56:52 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 11:56:52 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 11:56:52 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 11:56:52 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:47 [error]: PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.
+  -->  schema.prisma:12
+   | 
+11 |   provider = "postgresql"
+12 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:47 [error]: PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.
+  -->  schema.prisma:12
+   | 
+11 |   provider = "postgresql"
+12 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:47 [error]: PrismaClientInitializationError: error: Error validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.
+  -->  schema.prisma:12
+   | 
+11 |   provider = "postgresql"
+12 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:49 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:49 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:49 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:18:49 [error]: PrismaClientInitializationError: [1;91merror[0m: [1mError validating datasource `db`: the URL must start with the protocol `postgresql://` or `postgres://`.[0m
+  [1;94m-->[0m  [4mschema.prisma:12[0m
+[1;94m   | [0m
+[1;94m11 | [0m  provider = "postgresql"
+[1;94m12 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)

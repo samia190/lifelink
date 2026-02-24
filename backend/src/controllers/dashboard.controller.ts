@@ -392,7 +392,7 @@ export class DashboardController {
   static async getSystemHealth(_req: AuthRequest, res: Response, next: NextFunction) {
     try {
       const start = Date.now();
-      await prisma.$queryRaw`SELECT 1`;
+      await prisma.$runCommandRaw({ ping: 1 });
       const dbLatency = Date.now() - start;
 
       const [userCount, appointmentCount, activeAlerts] = await Promise.all([
