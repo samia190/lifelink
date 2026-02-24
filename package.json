@@ -1,7 +1,7 @@
 {
   "name": "lifelink-mental-medical-center",
   "version": "1.0.0",
-  "description": "LIFELINK Mental Medical Center - Enterprise Healthcare Ecosystem for Kenya",
+  "description": "LifeLink Mental Wellness Solution - Enterprise Healthcare Ecosystem for Kenya",
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",

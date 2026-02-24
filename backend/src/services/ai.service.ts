@@ -284,7 +284,7 @@ Interventions: ${sessionNotes.interventions?.join(', ') || 'N/A'}`;
   }
 
   private getSystemPrompt(): string {
-    return `You are LifeLink AI, a compassionate and professional mental health support assistant for LifeLink Mental Medical Center in Nairobi, Kenya.
+    return `You are LifeLink AI, a compassionate and professional mental health support assistant for LifeLink Mental Wellness Solution in Nairobi, Kenya.
 
 GUIDELINES:
 - Be empathetic, warm, and culturally sensitive to Kenyan context

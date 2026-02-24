@@ -1,4 +1,4 @@
-# 🏥 LIFELINK Mental Medical Center
+# 🏥 LifeLink Mental Wellness Solution
 
 > **Enterprise-Grade Hybrid Mental & Medical Healthcare Ecosystem for Kenya**
 
@@ -476,7 +476,7 @@ lifelink/
 
 ## Contact
 
-**LIFELINK Mental Medical Center**
+**LifeLink Mental Wellness Solution**
 - 📍 Nairobi, Kenya
 - 📞 +254 700 LIFELINK
 - 📧 info@lifelink.co.ke

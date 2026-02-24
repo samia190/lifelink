@@ -135,7 +135,7 @@ export default function Footer() {
         {/* Social & Bottom */}
         <div className="border-t border-navy-700/50 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-navy-400 text-sm">
-            &copy; {new Date().getFullYear()} LifeLink Mental Medical Center. All rights reserved.
+            &copy; {new Date().getFullYear()} LifeLink Mental Wellness Solution. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {[

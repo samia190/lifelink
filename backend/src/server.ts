@@ -1,5 +1,5 @@
 // ===========================================
-// LIFELINK MENTAL MEDICAL CENTER
+// LifeLink Mental Wellness Solution
 // Main Server Entry Point
 // ===========================================
 
@@ -189,7 +189,7 @@ const start = async () => {
       logger.info(`
 ╔══════════════════════════════════════════════════╗
 ║                                                  ║
-║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    🏥 LifeLink Mental Wellness Solution            ║
 ║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
 ║                                                  ║
 ║    API Server running on port ${String(config.app.port).padEnd(5)}            ║

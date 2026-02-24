@@ -1641,3 +1641,50 @@ Validation Error Count: 1
 2026-02-24 12:47:07 [info]: ✅ Database connected successfully
 2026-02-24 12:47:07 [info]: ✅ Database connected successfully
 2026-02-24 12:47:07 [info]: ✅ Database connected successfully
+2026-02-24 15:18:59 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:18:59 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:02 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:03 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:05 [info]: ✅ Database connected successfully
+2026-02-24 15:19:05 [info]: 🤖 Automation Engine initialized
+2026-02-24 15:19:05 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LifeLink Mental Wellness Solution            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: https://lifelinkmentalwellnesssolution.onrender.com   ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-24 15:19:05 [info]: ✅ Database connected successfully
+2026-02-24 15:19:05 [info]: ✅ Database connected successfully
+2026-02-24 15:19:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:02 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:07 [info]: ✅ Database connected successfully
+2026-02-24 15:19:07 [info]: ✅ Database connected successfully
+2026-02-24 15:19:07 [info]: ✅ Database connected successfully
+2026-02-24 15:19:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:07 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 15:19:08 [info]: ✅ Database connected successfully

@@ -11,7 +11,7 @@ export default function TermsPage() {
           <p className="text-sm text-charcoal-400">Last updated: {new Date().toLocaleDateString()}</p>
 
           <h2 className="text-xl font-semibold text-navy-800">1. Acceptance of Terms</h2>
-          <p>By accessing or using LifeLink Mental Medical Center&apos;s services, you agree to be bound by these Terms of Service and our Privacy Policy.</p>
+          <p>By accessing or using LifeLink Mental Wellness Solution&apos;s services, you agree to be bound by these Terms of Service and our Privacy Policy.</p>
 
           <h2 className="text-xl font-semibold text-navy-800">2. Services</h2>
           <p>LifeLink provides mental and medical healthcare services including therapy, psychiatric consultations, telehealth sessions, corporate wellness programs, and educational webinars.</p>

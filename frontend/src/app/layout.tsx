@@ -38,8 +38,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'LifeLink Mental Medical Center | Premium Healthcare in Kenya',
-    template: '%s | LifeLink Mental Medical Center',
+    default: 'LifeLink Mental Wellness Solution | Premium Healthcare in Kenya',
+    template: '%s | LifeLink Mental Wellness Solution',
   },
   description:
     'Kenya\'s premier mental and medical healthcare center. Expert psychiatrists, therapists, and counselors providing world-class care. Book your session today.',
@@ -49,10 +49,10 @@ export const metadata: Metadata = {
     'corporate wellness kenya', 'telehealth kenya'
   ],
   openGraph: {
-    title: 'LifeLink Mental Medical Center',
+    title: 'LifeLink Mental Wellness Solution',
     description: 'Premium mental & medical healthcare in Kenya',
     url: 'https://lifelink.co.ke',
-    siteName: 'LifeLink Mental Medical Center',
+    siteName: 'LifeLink Mental Wellness Solution',
     locale: 'en_KE',
     type: 'website',
   },

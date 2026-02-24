@@ -34,7 +34,7 @@ export default function AboutPage() {
             Redefining Mental Healthcare in <span className="text-gold-500">Kenya</span>
           </h1>
           <p className="text-lg text-charcoal-600 leading-relaxed">
-            LifeLink Mental Medical Center was founded with a simple yet powerful mission:
+            LifeLink Mental Wellness Solution was founded with a simple yet powerful mission:
             to make world-class mental healthcare accessible to every Kenyan. We combine
             clinical excellence, cultural sensitivity, and cutting-edge technology to deliver
             care that truly transforms lives.

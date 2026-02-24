@@ -1,7 +1,7 @@
 {
   "name": "lifelink-backend",
   "version": "1.0.0",
-  "description": "LifeLink Mental Medical Center - Backend API",
+  "description": "LifeLink Mental Wellness Solution - Backend API",
   "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",

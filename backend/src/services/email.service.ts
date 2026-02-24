@@ -38,9 +38,9 @@ export class EmailService {
 
   async sendWelcomeEmail(to: string, name: string): Promise<void> {
     const html = `
-      <h2>Welcome to LifeLink Mental Medical Center</h2>
+      <h2>Welcome to LifeLink Mental Wellness Solution</h2>
       <p>Dear ${name},</p>
-      <p>Thank you for registering with LifeLink Mental Medical Center. We are committed to providing you with the highest quality mental and medical healthcare services.</p>
+      <p>Thank you for registering with LifeLink Mental Wellness Solution. We are committed to providing you with the highest quality mental and medical healthcare services.</p>
       <p>Your account has been created successfully. You can now:</p>
       <ul>
         <li>Book appointments with our specialists</li>
@@ -52,7 +52,7 @@ export class EmailService {
       <p><strong>Crisis Hotline:</strong> ${config.crisis.hotline}</p>
       <p>Warm regards,<br>The LifeLink Team</p>
     `;
-    await this.send(to, 'Welcome to LifeLink Mental Medical Center', html);
+    await this.send(to, 'Welcome to LifeLink Mental Wellness Solution', html);
   }
 
   async sendAppointmentConfirmation(
@@ -194,7 +194,7 @@ export class EmailService {
           ${content}
         </div>
         <div style="background:#f7fafc;padding:24px;text-align:center;border-top:1px solid #e2e8f0;">
-          <p style="margin:0;color:#718096;font-size:12px;">LifeLink Mental Medical Center, Nairobi, Kenya</p>
+          <p style="margin:0;color:#718096;font-size:12px;">LifeLink Mental Wellness Solution, Nairobi, Kenya</p>
           <p style="margin:4px 0 0;color:#718096;font-size:12px;">Crisis Hotline: ${config.crisis.hotline}</p>
           <p style="margin:8px 0 0;color:#a0aec0;font-size:11px;">This is an automated message. Please do not reply directly.</p>
         </div>

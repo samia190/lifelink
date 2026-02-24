@@ -159,7 +159,7 @@ async function main() {
       author: admin.id,
       isPublished: true,
       publishedAt: new Date(),
-      metaTitle: 'Understanding Depression in Kenya | LifeLink Mental Medical Center',
+      metaTitle: 'Understanding Depression in Kenya | LifeLink Mental Wellness Solution',
       metaDescription: 'Learn about depression signs, causes, and treatment options available in Kenya. Expert guidance from LifeLink.',
     },
     {
@@ -172,7 +172,7 @@ async function main() {
       author: admin.id,
       isPublished: true,
       publishedAt: new Date(),
-      metaTitle: 'Telehealth in East Africa | LifeLink Mental Medical Center',
+      metaTitle: 'Telehealth in East Africa | LifeLink Mental Wellness Solution',
       metaDescription: 'Discover how telehealth is transforming mental healthcare in East Africa.',
     },
     {

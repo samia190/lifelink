@@ -148,7 +148,7 @@ export class ContentController {
         messages: [
           {
             role: 'system',
-            content: `You are a content writer for LifeLink Mental Medical Center in Nairobi, Kenya. Write professional, SEO-friendly mental health blog posts. Output ONLY valid JSON with keys: title (string), content (full HTML article body, 600-1000 words with paragraphs, headings, lists), excerpt (1-2 sentences), tags (array of 3-5 keyword strings).`,
+            content: `You are a content writer for LifeLink Mental Wellness Solution in Nairobi, Kenya. Write professional, SEO-friendly mental health blog posts. Output ONLY valid JSON with keys: title (string), content (full HTML article body, 600-1000 words with paragraphs, headings, lists), excerpt (1-2 sentences), tags (array of 3-5 keyword strings).`,
           },
           { role: 'user', content: `Write a blog post about: ${topic}. Category: ${category}. Make it informative, culturally relevant to Kenya, and helpful.` },
         ],

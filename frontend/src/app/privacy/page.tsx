@@ -11,7 +11,7 @@ export default function PrivacyPage() {
           <p className="text-sm text-charcoal-400">Last updated: {new Date().toLocaleDateString()}</p>
 
           <h2 className="text-xl font-semibold text-navy-800">1. Introduction</h2>
-          <p>LifeLink Mental Medical Center (&ldquo;LifeLink&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy and personal data in compliance with the Kenya Data Protection Act, 2019. This policy explains how we collect, use, store, and protect your information.</p>
+          <p>LifeLink Mental Wellness Solution (&ldquo;LifeLink&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy and personal data in compliance with the Kenya Data Protection Act, 2019. This policy explains how we collect, use, store, and protect your information.</p>
 
           <h2 className="text-xl font-semibold text-navy-800">2. Information We Collect</h2>
           <p>We collect personal information including: name, email, phone number, medical history, session notes, payment information, and device/usage data. Health data is treated as sensitive personal data under Kenyan law.</p>

@@ -54,7 +54,7 @@ export class SMSService {
     phone: string,
     data: { patientName: string; doctorName: string; date: string; time: string }
   ): Promise<boolean> {
-    const message = `Hi ${data.patientName}, reminder: Your appointment with Dr. ${data.doctorName} is on ${data.date} at ${data.time}. LifeLink Mental Medical Center.`;
+    const message = `Hi ${data.patientName}, reminder: Your appointment with Dr. ${data.doctorName} is on ${data.date} at ${data.time}. LifeLink Mental Wellness Solution.`;
     return this.send(phone, message);
   }
 
@@ -62,7 +62,7 @@ export class SMSService {
     phone: string,
     data: { patientName: string; date: string; time: string }
   ): Promise<boolean> {
-    const message = `Hi ${data.patientName}, your appointment on ${data.date} at ${data.time} has been confirmed. LifeLink Mental Medical Center.`;
+    const message = `Hi ${data.patientName}, your appointment on ${data.date} at ${data.time} has been confirmed. LifeLink Mental Wellness Solution.`;
     return this.send(phone, message);
   }
 
@@ -70,7 +70,7 @@ export class SMSService {
     phone: string,
     data: { patientName: string; amount: number; currency: string }
   ): Promise<boolean> {
-    const message = `Hi ${data.patientName}, payment of ${data.currency} ${data.amount.toLocaleString()} received. Thank you. LifeLink Mental Medical Center.`;
+    const message = `Hi ${data.patientName}, payment of ${data.currency} ${data.amount.toLocaleString()} received. Thank you. LifeLink Mental Wellness Solution.`;
     return this.send(phone, message);
   }
 

@@ -23,7 +23,7 @@ if (isProduction) {
 
 const config = {
   app: {
-    name: process.env.APP_NAME || 'LifeLink Mental Medical Center',
+    name: process.env.APP_NAME || 'LifeLink Mental Wellness Solution',
     url: process.env.APP_URL || 'http://localhost:3000',
     apiUrl: process.env.API_URL || 'http://localhost:4000',
     port: parseInt(process.env.PORT || '4000', 10),
@@ -56,7 +56,7 @@ const config = {
     user: process.env.SMTP_USER || '',
     pass: process.env.SMTP_PASS || '',
     from: process.env.EMAIL_FROM || 'noreply@lifelink.co.ke',
-    fromName: process.env.EMAIL_FROM_NAME || 'LifeLink Mental Medical Center',
+    fromName: process.env.EMAIL_FROM_NAME || 'LifeLink Mental Wellness Solution',
   },
   sms: {
     apiKey: process.env.AT_API_KEY || '',
