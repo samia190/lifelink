@@ -111,7 +111,7 @@
 .dash-shell {
   display: flex;
   min-height: 100vh;
-  background: #1e1b4b;
+  background: #082f49;
   color: #e2e8f0;
   position: relative;
 }
@@ -121,7 +121,7 @@
   position: fixed;
   top: 0; left: 0; bottom: 0;
   width: 260px;
-  background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+  background: linear-gradient(180deg, #082f49 0%, #0c4a6e 100%);
   border-right: 1px solid rgba(255,255,255,0.06);
   display: none;
   flex-direction: column;
@@ -177,8 +177,8 @@
   background: rgba(255,255,255,0.04);
 }
 .dash-sidebar__link--active {
-  color: #22d3ee !important;
-  background: rgba(34, 211, 238, 0.08) !important;
+  color: #a3e635 !important;
+  background: rgba(163, 230, 53, 0.08) !important;
   font-weight: 600;
 }
 
@@ -193,7 +193,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background: #1e1b4b;
+  background: #082f49;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   position: sticky;
   top: 0;
@@ -221,7 +221,7 @@
   align-items: center;
   gap: 16px;
   padding: 18px 24px;
-  background: rgba(30, 27, 75, 0.85);
+  background: rgba(8, 47, 73, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -265,7 +265,7 @@
 
 /* Cards */
 .dash-card {
-  background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(49, 46, 129, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(8, 47, 73, 0.8) 0%, rgba(12, 74, 110, 0.9) 100%);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 16px;
   padding: 24px;

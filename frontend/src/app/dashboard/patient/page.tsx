@@ -49,7 +49,7 @@ export default function PatientDashboard() {
 
   if (authLoading || !isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#1e1b4b] flex items-center justify-center">
+      <div className="min-h-screen bg-[#082f49] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 rounded-2xl overflow-hidden animate-pulse">
             <Image src="/logo.jpeg" alt="LifeLink" width={48} height={48} className="w-full h-full object-cover" />

@@ -33,7 +33,7 @@ const Toaster = dynamic(
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#1e1b4b',
+  themeColor: '#082f49',
 };
 
 export const metadata: Metadata = {
@@ -75,8 +75,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           position="top-right"
           toastOptions={{
             duration: 4000,
-            style: { background: '#312e81', color: '#fff', borderRadius: '12px' },
-            success: { iconTheme: { primary: '#22d3ee', secondary: '#312e81' } },
+            style: { background: '#0c4a6e', color: '#fff', borderRadius: '12px' },
+            success: { iconTheme: { primary: '#a3e635', secondary: '#0c4a6e' } },
           }}
         />
         <LayoutShell>

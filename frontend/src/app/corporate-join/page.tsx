@@ -68,7 +68,7 @@ export default function CorporateJoinPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-[#1e1b4b] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#082f49] flex items-center justify-center px-4">
         <div className="max-w-md w-full text-center">
           <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-emerald-400/20">
             <CheckCircle size={40} className="text-white" />
@@ -90,7 +90,7 @@ export default function CorporateJoinPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#1e1b4b]">
+    <div className="min-h-screen bg-[#082f49]">
       {/* Header */}
       <header className="border-b border-navy-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
