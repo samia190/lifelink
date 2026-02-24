@@ -66,8 +66,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
         {/* DNS prefetch for API and external services */}
-        <link rel="dns-prefetch" href="//localhost:4000" />
-        <link rel="preconnect" href="//localhost:4000" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//lifelinkmentalwellnesssolution.onrender.com" />
+        <link rel="preconnect" href="//lifelinkmentalwellnesssolution.onrender.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <AuthProvider>
