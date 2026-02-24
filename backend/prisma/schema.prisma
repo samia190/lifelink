@@ -1,0 +1,977 @@
+// ===========================================
+// LIFELINK MENTAL MEDICAL CENTER
+// Prisma Database Schema
+// ===========================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============ ENUMS ============
+
+enum UserRole {
+  SUPER_ADMIN
+  DOCTOR
+  PSYCHIATRIST
+  THERAPIST
+  CORPORATE_MANAGER
+  RECEPTIONIST
+  ACCOUNTANT
+  PATIENT
+  GUEST
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+  RESCHEDULED
+}
+
+enum AppointmentType {
+  IN_PERSON
+  TELEHEALTH
+  EMERGENCY
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum PaymentMethod {
+  MPESA
+  CARD
+  INSURANCE
+  CORPORATE
+  BANK_TRANSFER
+  CASH
+}
+
+enum SessionStatus {
+  SCHEDULED
+  WAITING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum RiskLevel {
+  LOW
+  MODERATE
+  HIGH
+  CRITICAL
+}
+
+enum AlertType {
+  SUICIDE_RISK
+  VIOLENCE_RISK
+  SEVERE_DISTRESS
+  SELF_HARM
+  SUBSTANCE_ABUSE
+  OTHER
+}
+
+enum WebinarStatus {
+  DRAFT
+  SCHEDULED
+  LIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum SubscriptionPlan {
+  BASIC
+  STANDARD
+  PREMIUM
+  CORPORATE
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+enum NotificationType {
+  EMAIL
+  SMS
+  PUSH
+  IN_APP
+}
+
+enum CorporateContractStatus {
+  DRAFT
+  ACTIVE
+  SUSPENDED
+  EXPIRED
+  TERMINATED
+}
+
+// ============ USER & AUTH ============
+
+model User {
+  id                String          @id @default(uuid())
+  email             String          @unique
+  phone             String?         @unique
+  passwordHash      String
+  role              UserRole        @default(PATIENT)
+  isActive          Boolean         @default(true)
+  isVerified        Boolean         @default(false)
+  twoFactorEnabled  Boolean         @default(false)
+  twoFactorSecret   String?
+  lastLoginAt       DateTime?
+  lastLoginIp       String?
+  failedLoginCount  Int             @default(0)
+  lockedUntil       DateTime?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  profile           Profile?
+  patient           Patient?
+  doctor            Doctor?
+  sessions          RefreshSession[]
+  auditLogs         AuditLog[]
+  notifications     Notification[]
+  sentMessages      Message[]       @relation("SentMessages")
+  receivedMessages  Message[]       @relation("ReceivedMessages")
+  chatMessages      ChatMessage[]
+  corporateManager  CorporateAccount? @relation("CorporateManager")
+
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+model Profile {
+  id            String    @id @default(uuid())
+  userId        String    @unique
+  firstName     String
+  lastName      String
+  dateOfBirth   DateTime?
+  gender        Gender?
+  avatarUrl     String?
+  address       String?
+  city          String?
+  county        String?
+  country       String    @default("Kenya")
+  nationality   String    @default("Kenyan")
+  idNumber      String?
+  emergencyName String?
+  emergencyPhone String?
+  emergencyRelation String?
+  bio           String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("profiles")
+}
+
+model RefreshSession {
+  id          String   @id @default(uuid())
+  userId      String
+  token       String   @unique
+  userAgent   String?
+  ipAddress   String?
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@map("refresh_sessions")
+}
+
+// ============ PATIENT ============
+
+model Patient {
+  id                    String            @id @default(uuid())
+  userId                String            @unique
+  patientNumber         String            @unique
+  assignedDoctorId      String?
+  insuranceProvider     String?
+  insurancePolicyNumber String?
+  insuranceExpiryDate   DateTime?
+  bloodType             String?
+  allergies             String[]
+  chronicConditions     String[]
+  currentMedications    String[]
+  riskLevel             RiskLevel         @default(LOW)
+  riskScore             Float             @default(0)
+  lastRiskAssessment    DateTime?
+  consentSigned         Boolean           @default(false)
+  consentDate           DateTime?
+  preferredLanguage     String            @default("English")
+  isActive              Boolean           @default(true)
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+
+  user                  User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignedDoctor        Doctor?           @relation("AssignedPatients", fields: [assignedDoctorId], references: [id])
+  appointments          Appointment[]
+  medicalRecords        MedicalRecord[]
+  prescriptions         Prescription[]
+  treatmentPlans        TreatmentPlan[]
+  sessionNotes          SessionNote[]
+  riskAlerts            RiskAlert[]
+  billingRecords        BillingRecord[]
+  invoices              Invoice[]
+  intakeResponses       IntakeResponse[]
+  progressTracking      ProgressTracking[]
+  documents             PatientDocument[]
+  corporateEmployee     CorporateEmployee?
+
+  @@index([patientNumber])
+  @@index([assignedDoctorId])
+  @@map("patients")
+}
+
+// ============ DOCTOR / PROVIDER ============
+
+model Doctor {
+  id                  String          @id @default(uuid())
+  userId              String          @unique
+  licenseNumber       String          @unique
+  specialization      String[]
+  qualifications      String[]
+  yearsOfExperience   Int             @default(0)
+  consultationFee     Float           @default(0)
+  teleHealthFee       Float           @default(0)
+  isAvailable         Boolean         @default(true)
+  maxDailyPatients    Int             @default(10)
+  bio                 String?
+  rating              Float           @default(0)
+  totalReviews        Int             @default(0)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  user                User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignedPatients    Patient[]       @relation("AssignedPatients")
+  appointments        Appointment[]
+  availabilitySlots   AvailabilitySlot[]
+  sessionNotes        SessionNote[]
+  prescriptions       Prescription[]
+  medicalRecords      MedicalRecord[]
+  telehealthSessions  TelehealthSession[]
+
+  @@map("doctors")
+}
+
+model AvailabilitySlot {
+  id          String   @id @default(uuid())
+  doctorId    String
+  dayOfWeek   Int      // 0-6 (Sunday-Saturday)
+  startTime   String   // HH:mm format
+  endTime     String   // HH:mm format
+  isActive    Boolean  @default(true)
+  slotType    AppointmentType @default(IN_PERSON)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  doctor      Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+
+  @@map("availability_slots")
+}
+
+// ============ APPOINTMENTS ============
+
+model Appointment {
+  id                String              @id @default(uuid())
+  patientId         String
+  doctorId          String
+  appointmentDate   DateTime
+  startTime         DateTime
+  endTime           DateTime
+  type              AppointmentType     @default(IN_PERSON)
+  status            AppointmentStatus   @default(PENDING)
+  isEmergency       Boolean             @default(false)
+  reason            String?
+  notes             String?
+  cancellationReason String?
+  cancelledAt       DateTime?
+  rescheduledFrom   String?
+  reminderSent      Boolean             @default(false)
+  confirmedAt       DateTime?
+  checkedInAt       DateTime?
+  completedAt       DateTime?
+  fee               Float               @default(0)
+  isPaid            Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+
+  patient           Patient             @relation(fields: [patientId], references: [id])
+  doctor            Doctor              @relation(fields: [doctorId], references: [id])
+  payment           Payment?
+  telehealthSession TelehealthSession?
+  sessionNote       SessionNote?
+
+  @@index([appointmentDate])
+  @@index([status])
+  @@map("appointments")
+}
+
+// ============ TELEHEALTH ============
+
+model TelehealthSession {
+  id                String          @id @default(uuid())
+  appointmentId     String          @unique
+  doctorId          String
+  roomId            String          @unique
+  roomToken         String?
+  status            SessionStatus   @default(SCHEDULED)
+  startedAt         DateTime?
+  endedAt           DateTime?
+  duration          Int?            // in minutes
+  isRecorded        Boolean         @default(false)
+  recordingUrl      String?
+  recordingConsent  Boolean         @default(false)
+  screenShareUsed   Boolean         @default(false)
+  chatLog           Json?
+  technicalIssues   String?
+  qualityRating     Int?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  appointment       Appointment     @relation(fields: [appointmentId], references: [id])
+  doctor            Doctor          @relation(fields: [doctorId], references: [id])
+
+  @@map("telehealth_sessions")
+}
+
+// ============ MEDICAL RECORDS ============
+
+model MedicalRecord {
+  id              String   @id @default(uuid())
+  patientId       String
+  doctorId        String
+  title           String
+  description     String
+  diagnosis       String?
+  icdCode         String?
+  chiefComplaint  String?
+  examination     String?
+  assessment      String?
+  plan            String?
+  vitalSigns      Json?
+  labResults      Json?
+  aiSummary       String?
+  isConfidential  Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  patient         Patient  @relation(fields: [patientId], references: [id])
+  doctor          Doctor   @relation(fields: [doctorId], references: [id])
+  attachments     MedicalAttachment[]
+
+  @@index([patientId])
+  @@map("medical_records")
+}
+
+model MedicalAttachment {
+  id              String        @id @default(uuid())
+  medicalRecordId String
+  fileName        String
+  fileUrl         String
+  fileType        String
+  fileSize        Int
+  uploadedAt      DateTime      @default(now())
+
+  medicalRecord   MedicalRecord @relation(fields: [medicalRecordId], references: [id], onDelete: Cascade)
+
+  @@map("medical_attachments")
+}
+
+model SessionNote {
+  id                String    @id @default(uuid())
+  appointmentId     String    @unique
+  patientId         String
+  doctorId          String
+  subjective        String?
+  objective         String?
+  assessment        String?
+  plan              String?
+  mentalStatusExam  Json?
+  riskAssessment    Json?
+  interventions     String[]
+  homework          String?
+  nextSessionGoals  String?
+  aiSummary         String?
+  duration          Int?
+  isLocked          Boolean   @default(false)
+  lockedAt          DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  appointment       Appointment @relation(fields: [appointmentId], references: [id])
+  patient           Patient     @relation(fields: [patientId], references: [id])
+  doctor            Doctor      @relation(fields: [doctorId], references: [id])
+
+  @@map("session_notes")
+}
+
+model Prescription {
+  id              String    @id @default(uuid())
+  patientId       String
+  doctorId        String
+  medication      String
+  dosage          String
+  frequency       String
+  duration        String
+  instructions    String?
+  quantity        Int?
+  refills         Int       @default(0)
+  isActive        Boolean   @default(true)
+  startDate       DateTime
+  endDate         DateTime?
+  dispensedAt     DateTime?
+  pharmacyNotes   String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  patient         Patient   @relation(fields: [patientId], references: [id])
+  doctor          Doctor    @relation(fields: [doctorId], references: [id])
+
+  @@map("prescriptions")
+}
+
+model TreatmentPlan {
+  id              String    @id @default(uuid())
+  patientId       String
+  title           String
+  description     String
+  goals           Json
+  interventions   Json
+  startDate       DateTime
+  endDate         DateTime?
+  reviewDate      DateTime?
+  status          String    @default("active")
+  progress        Float     @default(0)
+  aiRecommendations String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  patient         Patient   @relation(fields: [patientId], references: [id])
+
+  @@map("treatment_plans")
+}
+
+model ProgressTracking {
+  id          String   @id @default(uuid())
+  patientId   String
+  metricName  String
+  metricValue Float
+  notes       String?
+  recordedAt  DateTime @default(now())
+
+  patient     Patient  @relation(fields: [patientId], references: [id])
+
+  @@index([patientId, metricName])
+  @@map("progress_tracking")
+}
+
+model PatientDocument {
+  id          String   @id @default(uuid())
+  patientId   String
+  title       String
+  description String?
+  fileName    String
+  fileUrl     String
+  fileType    String
+  fileSize    Int
+  isEncrypted Boolean  @default(true)
+  uploadedBy  String
+  uploadedAt  DateTime @default(now())
+
+  patient     Patient  @relation(fields: [patientId], references: [id])
+
+  @@map("patient_documents")
+}
+
+// ============ RISK & CRISIS ============
+
+model RiskAlert {
+  id          String    @id @default(uuid())
+  patientId   String
+  alertType   AlertType
+  riskLevel   RiskLevel
+  description String
+  triggerSource String  // "chat", "intake", "session", "manual"
+  triggerData Json?
+  isResolved  Boolean   @default(false)
+  resolvedBy  String?
+  resolvedAt  DateTime?
+  resolution  String?
+  notifiedAdmins Boolean @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  patient     Patient   @relation(fields: [patientId], references: [id])
+
+  @@index([riskLevel])
+  @@index([isResolved])
+  @@map("risk_alerts")
+}
+
+// ============ BILLING & PAYMENTS ============
+
+model Payment {
+  id                String          @id @default(uuid())
+  appointmentId     String?         @unique
+  amount            Float
+  currency          String          @default("KES")
+  method            PaymentMethod
+  status            PaymentStatus   @default(PENDING)
+  transactionId     String?         @unique
+  mpesaReceiptNumber String?
+  mpesaPhoneNumber  String?
+  stripePaymentId   String?
+  insuranceClaim    String?
+  description       String?
+  metadata          Json?
+  paidAt            DateTime?
+  refundedAt        DateTime?
+  refundAmount      Float?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  appointment       Appointment?    @relation(fields: [appointmentId], references: [id])
+
+  @@index([transactionId])
+  @@index([status])
+  @@map("payments")
+}
+
+model BillingRecord {
+  id          String    @id @default(uuid())
+  patientId   String
+  description String
+  amount      Float
+  currency    String    @default("KES")
+  category    String
+  isBilled    Boolean   @default(false)
+  billedDate  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  patient     Patient   @relation(fields: [patientId], references: [id])
+
+  @@map("billing_records")
+}
+
+model Invoice {
+  id            String          @id @default(uuid())
+  invoiceNumber String          @unique
+  patientId     String?
+  corporateId   String?
+  items         Json
+  subtotal      Float
+  tax           Float           @default(0)
+  discount      Float           @default(0)
+  total         Float
+  currency      String          @default("KES")
+  status        InvoiceStatus   @default(DRAFT)
+  dueDate       DateTime
+  paidDate      DateTime?
+  notes         String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  patient       Patient?        @relation(fields: [patientId], references: [id])
+  corporate     CorporateAccount? @relation(fields: [corporateId], references: [id])
+
+  @@map("invoices")
+}
+
+// ============ CORPORATE WELLNESS ============
+
+model CorporateAccount {
+  id                  String                  @id @default(uuid())
+  companyName         String
+  industry            String?
+  contactPerson       String
+  contactEmail        String
+  contactPhone        String
+  address             String?
+  managerId           String?                 @unique
+  contractStatus      CorporateContractStatus @default(DRAFT)
+  contractStartDate   DateTime?
+  contractEndDate     DateTime?
+  contractValue       Float                   @default(0)
+  maxEmployees        Int                     @default(0)
+  servicesIncluded    String[]
+  billingCycle        String                  @default("monthly")
+  notes               String?
+  createdAt           DateTime                @default(now())
+  updatedAt           DateTime                @updatedAt
+
+  manager             User?                   @relation("CorporateManager", fields: [managerId], references: [id])
+  employees           CorporateEmployee[]
+  invoices            Invoice[]
+  usageReports        CorporateUsageReport[]
+
+  @@map("corporate_accounts")
+}
+
+model CorporateEmployee {
+  id              String            @id @default(uuid())
+  corporateId     String
+  patientId       String            @unique
+  employeeId      String?
+  department      String?
+  isActive        Boolean           @default(true)
+  enrolledAt      DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  corporate       CorporateAccount  @relation(fields: [corporateId], references: [id])
+  patient         Patient           @relation(fields: [patientId], references: [id])
+
+  @@map("corporate_employees")
+}
+
+model CorporateUsageReport {
+  id              String            @id @default(uuid())
+  corporateId     String
+  reportMonth     DateTime
+  totalSessions   Int               @default(0)
+  uniqueEmployees Int               @default(0)
+  totalCost       Float             @default(0)
+  reportData      Json?
+  generatedAt     DateTime          @default(now())
+
+  corporate       CorporateAccount  @relation(fields: [corporateId], references: [id])
+
+  @@map("corporate_usage_reports")
+}
+
+// ============ AI CHAT & INTAKE ============
+
+model ChatConversation {
+  id          String        @id @default(uuid())
+  sessionId   String        @unique
+  userId      String?
+  isAnonymous Boolean       @default(true)
+  metadata    Json?
+  startedAt   DateTime      @default(now())
+  endedAt     DateTime?
+
+  messages    ChatMessage[]
+
+  @@map("chat_conversations")
+}
+
+model ChatMessage {
+  id              String            @id @default(uuid())
+  conversationId  String
+  userId          String?
+  role            String            // "user", "assistant", "system"
+  content         String
+  sentimentScore  Float?
+  riskFlags       String[]
+  metadata        Json?
+  createdAt       DateTime          @default(now())
+
+  conversation    ChatConversation  @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  user            User?             @relation(fields: [userId], references: [id])
+
+  @@map("chat_messages")
+}
+
+model IntakeResponse {
+  id          String    @id @default(uuid())
+  patientId   String?
+  sessionId   String
+  responses   Json
+  riskScore   Float     @default(0)
+  riskLevel   RiskLevel @default(LOW)
+  aiSummary   String?
+  recommendations String[]
+  isCompleted Boolean   @default(false)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+  patient     Patient?  @relation(fields: [patientId], references: [id])
+
+  @@map("intake_responses")
+}
+
+// ============ WEBINAR & TEACHING ============
+
+model Webinar {
+  id              String          @id @default(uuid())
+  title           String
+  description     String
+  instructorName  String
+  instructorBio   String?
+  thumbnailUrl    String?
+  streamUrl       String?
+  replayUrl       String?
+  category        String
+  tags            String[]
+  status          WebinarStatus   @default(DRAFT)
+  isPaid          Boolean         @default(false)
+  price           Float           @default(0)
+  currency        String          @default("KES")
+  maxAttendees    Int?
+  scheduledAt     DateTime?
+  startedAt       DateTime?
+  endedAt         DateTime?
+  duration        Int?
+  viewerCount     Int             @default(0)
+  isArchived      Boolean         @default(false)
+  certificateTemplate String?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  registrations   WebinarRegistration[]
+  comments        WebinarComment[]
+
+  @@map("webinars")
+}
+
+model WebinarRegistration {
+  id            String    @id @default(uuid())
+  webinarId     String
+  email         String
+  name          String
+  phone         String?
+  isPaid        Boolean   @default(false)
+  paymentId     String?
+  attended      Boolean   @default(false)
+  certificateUrl String?
+  registeredAt  DateTime  @default(now())
+
+  webinar       Webinar   @relation(fields: [webinarId], references: [id])
+
+  @@unique([webinarId, email])
+  @@map("webinar_registrations")
+}
+
+model WebinarComment {
+  id          String   @id @default(uuid())
+  webinarId   String
+  authorName  String
+  content     String
+  isApproved  Boolean  @default(false)
+  isQuestion  Boolean  @default(false)
+  isAnswered  Boolean  @default(false)
+  answer      String?
+  createdAt   DateTime @default(now())
+
+  webinar     Webinar  @relation(fields: [webinarId], references: [id], onDelete: Cascade)
+
+  @@map("webinar_comments")
+}
+
+// ============ SUBSCRIPTIONS ============
+
+model Subscription {
+  id              String            @id @default(uuid())
+  userId          String
+  plan            SubscriptionPlan
+  amount          Float
+  currency        String            @default("KES")
+  interval        String            @default("monthly")
+  startDate       DateTime
+  endDate         DateTime?
+  isActive        Boolean           @default(true)
+  autoRenew       Boolean           @default(true)
+  sessionsIncluded Int              @default(0)
+  sessionsUsed    Int               @default(0)
+  stripeSubId     String?
+  cancelledAt     DateTime?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([userId])
+  @@map("subscriptions")
+}
+
+// ============ NOTIFICATIONS ============
+
+model Notification {
+  id          String            @id @default(uuid())
+  userId      String
+  type        NotificationType
+  title       String
+  message     String
+  data        Json?
+  isRead      Boolean           @default(false)
+  readAt      DateTime?
+  sentAt      DateTime          @default(now())
+
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  senderId    String
+  receiverId  String
+  subject     String?
+  content     String
+  isRead      Boolean  @default(false)
+  readAt      DateTime?
+  createdAt   DateTime @default(now())
+
+  sender      User     @relation("SentMessages", fields: [senderId], references: [id])
+  receiver    User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
+
+  @@map("messages")
+}
+
+// ============ BLOG ============
+
+model BlogPost {
+  id              String    @id @default(uuid())
+  title           String
+  slug            String    @unique
+  excerpt         String?
+  content         String
+  featuredImage   String?
+  author          String
+  category        String
+  tags            String[]
+  isPublished     Boolean   @default(false)
+  publishedAt     DateTime?
+  metaTitle       String?
+  metaDescription String?
+  viewCount       Int       @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([slug])
+  @@map("blog_posts")
+}
+
+// ============ SERVICES ============
+
+model Service {
+  id              String    @id @default(uuid())
+  name            String
+  slug            String    @unique
+  description     String
+  longDescription String?
+  icon            String?
+  imageUrl        String?
+  price           Float?
+  duration        Int?      // in minutes
+  category        String
+  isActive        Boolean   @default(true)
+  isFeatured      Boolean   @default(false)
+  sortOrder       Int       @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("services")
+}
+
+// ============ AUDIT & LOGGING ============
+
+model AuditLog {
+  id          String   @id @default(uuid())
+  userId      String?
+  action      String
+  entity      String
+  entityId    String?
+  oldData     Json?
+  newData     Json?
+  ipAddress   String?
+  userAgent   String?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+
+  user        User?    @relation(fields: [userId], references: [id])
+
+  @@index([entity, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+model SystemLog {
+  id          String   @id @default(uuid())
+  level       String   // info, warn, error, critical
+  source      String
+  message     String
+  stackTrace  String?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+
+  @@index([level])
+  @@index([createdAt])
+  @@map("system_logs")
+}
+
+// ============ AUTOMATION ============
+
+model AutomationTask {
+  id            String    @id @default(uuid())
+  name          String
+  type          String
+  schedule      String?   // cron expression
+  isActive      Boolean   @default(true)
+  lastRunAt     DateTime?
+  nextRunAt     DateTime?
+  config        Json?
+  lastResult    Json?
+  errorCount    Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("automation_tasks")
+}
+
+// ============ ANALYTICS ============
+
+model AnalyticsEvent {
+  id          String   @id @default(uuid())
+  eventType   String
+  source      String?
+  userId      String?
+  sessionId   String?
+  data        Json?
+  ipAddress   String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+
+  @@index([eventType])
+  @@index([createdAt])
+  @@map("analytics_events")
+}
+
+model RevenueRecord {
+  id          String   @id @default(uuid())
+  date        DateTime
+  amount      Float
+  currency    String   @default("KES")
+  category    String
+  source      String
+  metadata    Json?
+  createdAt   DateTime @default(now())
+
+  @@index([date])
+  @@map("revenue_records")
+}

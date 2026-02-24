@@ -1,0 +1,1127 @@
+2026-02-11 12:05:44 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:05:47 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:05:44 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:05:48 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:05:50 [info]: ✅ Database connected successfully
+2026-02-11 12:05:50 [info]: 🤖 Automation Engine initialized
+2026-02-11 12:05:50 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 12:05:50 [info]: ✅ Database connected successfully
+2026-02-11 12:06:16 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:06:18 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:06:21 [info]: ✅ Database connected successfully
+2026-02-11 12:07:42 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:07:44 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:07:45 [info]: ✅ Database connected successfully
+2026-02-11 12:07:45 [info]: 🤖 Automation Engine initialized
+2026-02-11 12:07:45 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 12:15:15 [error]: 
+Invalid `prisma.service.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\service.controller.ts:19:45
+
+  16 const where: any = { isActive: true };
+  17 if (category) where.category = category;
+  18 
+→ 19 const services = await prisma.service.findMany(
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+2026-02-11 12:18:10 [error]: 
+Invalid `prisma.blogPost.count()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\blog.controller.ts:57:25
+
+  54     tags: true, publishedAt: true, viewCount: true,
+  55   },
+  56 }),
+→ 57 prisma.blogPost.count(
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+2026-02-11 12:44:16 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:17 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:16 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:18 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:16 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:18 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:16 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:18 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:44:23 [error]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:150:5)
+2026-02-11 12:44:23 [error]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:150:5)
+2026-02-11 12:44:23 [error]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:150:5)
+2026-02-11 12:44:23 [error]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:150:5)
+2026-02-11 12:49:14 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:49:16 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 12:49:21 [error]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:150:5)
+2026-02-11 13:25:45 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 13:25:47 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 13:25:48 [info]: ✅ Database connected successfully
+2026-02-11 13:25:48 [info]: 🤖 Automation Engine initialized
+2026-02-11 13:25:48 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 13:34:40 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 13:34:42 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 13:34:43 [info]: ✅ Database connected successfully
+2026-02-11 13:34:43 [info]: 🤖 Automation Engine initialized
+2026-02-11 13:34:43 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 14:02:11 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:02:12 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:02:13 [info]: ✅ Database connected successfully
+2026-02-11 14:02:13 [info]: 🤖 Automation Engine initialized
+2026-02-11 14:02:13 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 14:38:57 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:38:58 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:39:00 [info]: ✅ Database connected successfully
+2026-02-11 14:39:00 [info]: 🤖 Automation Engine initialized
+2026-02-11 14:39:00 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 14:47:38 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:47:39 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:47:40 [info]: ✅ Database connected successfully
+2026-02-11 14:47:40 [info]: 🤖 Automation Engine initialized
+2026-02-11 14:47:40 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 14:54:49 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:54:50 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 14:54:51 [info]: ✅ Database connected successfully
+2026-02-11 14:54:51 [info]: 🤖 Automation Engine initialized
+2026-02-11 14:54:51 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 14:59:28 [error]: Token has expired
+2026-02-11 14:59:30 [error]: Token has expired
+2026-02-11 15:00:06 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:77:61
+
+  74 const in1Hour = new Date(now.getTime() + 60 * 60 * 1000);
+  75 
+  76 // 24-hour reminders
+→ 77 const upcomingAppointments = await prisma.appointment.findMany(
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at $n.handleRequestError (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Function.sendAppointmentReminders (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:77:36)
+    at Task._execution (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:20:7)
+2026-02-11 15:00:06 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:135:59
+
+  132 try {
+  133   const cutoff = new Date(Date.now() - 30 * 60 * 1000); // 30 min past
+  134 
+→ 135   const missedAppointments = await prisma.appointment.findMany(
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at $n.handleRequestError (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Function.handleMissedSessions (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:135:34)
+    at Task._execution (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:25:7)
+2026-02-11 15:00:06 [error]: PrismaClientKnownRequestError: 
+Invalid `prisma.corporateAccount.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:382:63
+
+  379 try {
+  380   const in30Days = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+  381 
+→ 382   const expiringContracts = await prisma.corporateAccount.findMany(
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at $n.handleRequestError (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Function.corporateFollowUps (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:382:33)
+    at Task._execution (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\automation.service.ts:60:7)
+2026-02-11 15:27:00 [error]: Token has expired
+2026-02-11 15:27:01 [error]: Token has expired
+2026-02-11 16:00:49 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 16:00:50 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 16:00:51 [info]: ✅ Database connected successfully
+2026-02-11 17:11:54 [error]: Token has expired
+2026-02-11 17:11:54 [error]: Token has expired
+2026-02-11 17:19:57 [error]: Invalid email or password
+2026-02-11 17:20:04 [error]: Invalid email or password
+2026-02-11 17:20:05 [error]: Invalid email or password
+2026-02-11 17:48:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:48:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:48:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:48:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:48:01 [info]: ✅ Database connected successfully
+2026-02-11 17:48:01 [info]: 🤖 Automation Engine initialized
+2026-02-11 17:48:01 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 17:48:02 [info]: ✅ Database connected successfully
+2026-02-11 17:51:17 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:18 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:19 [info]: ✅ Database connected successfully
+2026-02-11 17:51:19 [info]: 🤖 Automation Engine initialized
+2026-02-11 17:51:19 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 17:51:18 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:19 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:20 [info]: ✅ Database connected successfully
+2026-02-11 17:51:42 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:43 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:44 [info]: ✅ Database connected successfully
+2026-02-11 17:51:43 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:43 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 17:51:44 [info]: 🤖 Automation Engine initialized
+2026-02-11 17:51:44 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 17:51:44 [info]: ✅ Database connected successfully
+2026-02-11 18:17:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 18:17:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 18:17:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 18:17:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 18:17:07 [info]: ✅ Database connected successfully
+2026-02-11 18:17:07 [info]: 🤖 Automation Engine initialized
+2026-02-11 18:17:07 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-11 18:17:08 [info]: ✅ Database connected successfully
+2026-02-11 18:33:49 [error]: Token has expired
+2026-02-11 18:33:49 [error]: Token has expired
+2026-02-11 18:56:45 [error]: 
+Invalid `prisma.user.findUnique()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\services\auth.service.ts:109:36
+
+  106 }
+  107 
+  108 async login(email: string, password: string, ipAddress?: string, userAgent?: string) {
+→ 109   const user = await prisma.user.findUnique(
+Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+2026-02-11 20:30:31 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 20:30:35 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-11 20:30:39 [info]: ✅ Database connected successfully
+2026-02-11 20:30:39 [info]: 🤖 Automation Engine initialized
+2026-02-11 20:30:39 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-12 11:11:22 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:11:24 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:11:24 [error]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:154:5)
+2026-02-12 11:12:42 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:12:44 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:12:45 [error]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:154:5)
+2026-02-12 11:14:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:14:02 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:14:02 [info]: ✅ Database connected successfully
+2026-02-12 11:14:02 [info]: 🤖 Automation Engine initialized
+2026-02-12 11:14:02 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-12 11:40:55 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:40:55 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:40:56 [info]: ✅ Database connected successfully
+2026-02-12 11:40:56 [info]: 🤖 Automation Engine initialized
+2026-02-12 11:40:56 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-12 11:40:55 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:40:56 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:40:56 [info]: ✅ Database connected successfully
+2026-02-12 11:40:55 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:40:56 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:40:56 [info]: ✅ Database connected successfully
+2026-02-12 11:41:11 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:41:13 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:41:13 [info]: ✅ Database connected successfully
+2026-02-12 11:41:51 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:41:52 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-12 11:41:53 [info]: ✅ Database connected successfully
+2026-02-12 11:41:53 [info]: 🤖 Automation Engine initialized
+2026-02-12 11:41:53 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-12 11:42:29 [error]: Token has expired
+2026-02-12 11:42:30 [error]: Token has expired
+2026-02-12 11:42:46 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:42:46 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:47:43 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:47:44 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:47:51 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:47:51 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:49:11 [error]: 
+Invalid `prisma.patient.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:320:24
+
+  317 }
+  318 
+  319 const [patients, total] = await Promise.all([
+→ 320   prisma.patient.findMany({
+          where: {},
+          skip: 0,
+          take: 100,
+          include: {
+            user: {
+              include: {
+              ~~~~~~~
+                profile: true
+              },
+              select: {
+              ~~~~~~
+                id: true,
+                email: true,
+                isActive: true,
+                lastLoginAt: true,
+                profile: true
+              }
+            },
+            _count: {
+              select: {
+                appointments: true
+              }
+            }
+          },
+          orderBy: {
+            createdAt: "desc"
+          }
+        })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:49:12 [error]: 
+Invalid `prisma.patient.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:320:24
+
+  317 }
+  318 
+  319 const [patients, total] = await Promise.all([
+→ 320   prisma.patient.findMany({
+          where: {},
+          skip: 0,
+          take: 100,
+          include: {
+            user: {
+              include: {
+              ~~~~~~~
+                profile: true
+              },
+              select: {
+              ~~~~~~
+                id: true,
+                email: true,
+                isActive: true,
+                lastLoginAt: true,
+                profile: true
+              }
+            },
+            _count: {
+              select: {
+                appointments: true
+              }
+            }
+          },
+          orderBy: {
+            createdAt: "desc"
+          }
+        })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:49:18 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:49:18 [error]: 
+Invalid `prisma.doctor.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:290:43
+
+  287 // ===== ADMIN: List all doctors =====
+  288 static async listDoctors(req: AuthRequest, res: Response, next: NextFunction) {
+  289   try {
+→ 290     const doctors = await prisma.doctor.findMany({
+            include: {
+              user: {
+                include: {
+                ~~~~~~~
+                  profile: true
+                },
+                select: {
+                ~~~~~~
+                  id: true,
+                  email: true,
+                  phone: true,
+                  role: true,
+                  isActive: true,
+                  lastLoginAt: true,
+                  profile: true
+                }
+              },
+              _count: {
+                select: {
+                  appointments: true
+                }
+              }
+            },
+            orderBy: {
+              createdAt: "desc"
+            }
+          })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:49:32 [error]: 
+Invalid `prisma.patient.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:320:24
+
+  317 }
+  318 
+  319 const [patients, total] = await Promise.all([
+→ 320   prisma.patient.findMany({
+          where: {},
+          skip: 0,
+          take: 15,
+          include: {
+            user: {
+              include: {
+              ~~~~~~~
+                profile: true
+              },
+              select: {
+              ~~~~~~
+                id: true,
+                email: true,
+                isActive: true,
+                lastLoginAt: true,
+                profile: true
+              }
+            },
+            _count: {
+              select: {
+                appointments: true
+              }
+            }
+          },
+          orderBy: {
+            createdAt: "desc"
+          }
+        })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-12 11:49:32 [error]: 
+Invalid `prisma.patient.findMany()` invocation in
+C:\Users\User\OneDrive\Desktop\lifelink\backend\src\controllers\dashboard.controller.ts:320:24
+
+  317 }
+  318 
+  319 const [patients, total] = await Promise.all([
+→ 320   prisma.patient.findMany({
+          where: {},
+          skip: 0,
+          take: 15,
+          include: {
+            user: {
+              include: {
+              ~~~~~~~
+                profile: true
+              },
+              select: {
+              ~~~~~~
+                id: true,
+                email: true,
+                isActive: true,
+                lastLoginAt: true,
+                profile: true
+              }
+            },
+            _count: {
+              select: {
+                appointments: true
+              }
+            }
+          },
+          orderBy: {
+            createdAt: "desc"
+          }
+        })
+
+Please either use `include` or `select`, but not both at the same time.
+2026-02-24 10:10:36 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 10:10:37 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 10:10:42 [error]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:154:5)
+2026-02-24 10:29:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 10:29:08 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 10:29:10 [info]: ✅ Database connected successfully
+2026-02-24 10:29:10 [info]: 🤖 Automation Engine initialized
+2026-02-24 10:29:10 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-24 11:02:12 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 11:02:14 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 11:02:15 [info]: ✅ Database connected successfully
