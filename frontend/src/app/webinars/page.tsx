@@ -46,7 +46,7 @@ export default function WebinarsPage() {
           {displayWebinars.map((webinar, i) => (
             <AnimateInView key={webinar.id} delay={i}>
               <div className="card overflow-hidden h-full flex flex-col">
-                <div className="h-40 bg-gradient-to-br from-navy-800 to-navy-900 p-6 flex flex-col justify-between">
+                <div className="h-40 bg-gradient-to-br from-navy-600 to-navy-700 p-6 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <span className={`text-xs font-medium px-3 py-1 rounded-full ${
                       webinar.isFree ? 'bg-green-400/20 text-green-300' : 'bg-gold-400/20 text-gold-300'

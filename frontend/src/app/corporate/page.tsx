@@ -59,7 +59,7 @@ export default function CorporatePage() {
   return (
     <div className="pt-32">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 section-padding">
+      <section className="bg-gradient-to-br from-navy-700 via-navy-600 to-navy-800 section-padding">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeUp>

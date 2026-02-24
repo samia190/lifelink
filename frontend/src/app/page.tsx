@@ -9,12 +9,12 @@ import {
 } from 'lucide-react';
 
 const services = [
-  { icon: Brain, title: 'Individual Therapy', desc: 'One-on-one sessions tailored to your unique needs', href: '/services/individual-therapy', color: 'from-cyan-400 to-indigo-600' },
-  { icon: Users, title: 'Couples & Family', desc: 'Strengthen relationships and family bonds', href: '/services/couples-therapy', color: 'from-violet-400 to-indigo-600' },
-  { icon: Video, title: 'Online Therapy', desc: 'Secure telehealth sessions from anywhere', href: '/services/online-therapy', color: 'from-teal-400 to-indigo-600' },
-  { icon: Shield, title: 'Psychiatric Care', desc: 'Expert assessment and medication management', href: '/services/psychiatric-consultation', color: 'from-rose-400 to-indigo-600' },
-  { icon: HeartHandshake, title: 'Corporate Wellness', desc: 'Comprehensive programs for organizations', href: '/corporate', color: 'from-amber-400 to-indigo-600' },
-  { icon: Sparkles, title: 'Trauma & PTSD', desc: 'Specialized trauma-focused therapy', href: '/services/trauma-ptsd-therapy', color: 'from-emerald-400 to-indigo-600' },
+  { icon: Brain, title: 'Individual Therapy', desc: 'One-on-one sessions tailored to your unique needs', href: '/services/individual-therapy', color: 'from-cyan-400 to-sky-600' },
+  { icon: Users, title: 'Couples & Family', desc: 'Strengthen relationships and family bonds', href: '/services/couples-therapy', color: 'from-violet-400 to-sky-600' },
+  { icon: Video, title: 'Online Therapy', desc: 'Secure telehealth sessions from anywhere', href: '/services/online-therapy', color: 'from-teal-400 to-sky-600' },
+  { icon: Shield, title: 'Psychiatric Care', desc: 'Expert assessment and medication management', href: '/services/psychiatric-consultation', color: 'from-rose-400 to-sky-600' },
+  { icon: HeartHandshake, title: 'Corporate Wellness', desc: 'Comprehensive programs for organizations', href: '/corporate', color: 'from-lime-400 to-sky-600' },
+  { icon: Sparkles, title: 'Trauma & PTSD', desc: 'Specialized trauma-focused therapy', href: '/services/trauma-ptsd-therapy', color: 'from-emerald-400 to-sky-600' },
 ];
 
 const stats = [
@@ -35,12 +35,12 @@ export default function HomePage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950">
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(34, 211, 238, 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(34, 211, 238, 0.2) 0%, transparent 50%)',
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-700 via-navy-600 to-navy-800">
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(163, 230, 53, 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(56, 189, 248, 0.25) 0%, transparent 50%)',
           }} />
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/5 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-navy-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-navy-400/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
         </div>
 
         <div className="container-custom relative z-10 pt-32 pb-20">
@@ -213,7 +213,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="section-padding bg-navy-900">
+      <section className="section-padding bg-gradient-to-br from-navy-700 via-navy-600 to-navy-800">
         <div className="container-custom">
           <AnimateInView className="text-center mb-16">
             <span className="text-gold-400 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
@@ -308,7 +308,7 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateInView animation="fade-left" className="order-2 lg:order-1">
-              <div className="card p-8 bg-gradient-to-br from-navy-800 to-navy-900 text-white">
+              <div className="card p-8 bg-gradient-to-br from-navy-600 to-navy-700 text-white">
                 <h3 className="text-xl font-display font-semibold mb-6">Corporate Dashboard</h3>
                 <div className="space-y-4">
                   {[
@@ -358,7 +358,7 @@ export default function HomePage() {
 
       {/* ===== FINAL CTA ===== */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-800" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-700 via-navy-600 to-navy-700" />
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23e5ac3e\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
         }} />

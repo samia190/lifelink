@@ -54,7 +54,7 @@ export default function BlogPage() {
           {filteredPosts.map((post, i) => (
             <AnimateInView key={post.slug} delay={i}>
               <Link href={`/blog/${post.slug}`} className="card block group h-full overflow-hidden">
-                <div className="h-48 bg-gradient-to-br from-navy-800 to-navy-900 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-navy-600 to-navy-700 flex items-center justify-center">
                   <span className="text-3xl font-display font-bold text-gold-400/30">{post.title[0]}</span>
                 </div>
                 <div className="p-6">

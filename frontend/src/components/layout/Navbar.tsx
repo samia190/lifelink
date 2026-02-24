@@ -71,7 +71,7 @@ export default function Navbar() {
     >
       {/* Top bar */}
       <div className={`transition-all duration-300 ${isScrolled ? 'h-0 overflow-hidden' : 'h-auto'}`}>
-        <div className="bg-navy-900 text-white text-sm">
+        <div className="bg-navy-700 text-white text-sm">
           <div className="container-custom flex items-center justify-between py-2">
             <div className="flex items-center gap-4">
               <a href="tel:+254700000000" className="flex items-center gap-1 hover:text-gold-400 transition-colors">

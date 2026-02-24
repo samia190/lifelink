@@ -35,9 +35,9 @@
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white
-           bg-gradient-to-r from-navy-700 to-navy-800 hover:from-navy-800 hover:to-navy-900
-           transition-all duration-300 shadow-lg shadow-navy-700/25
-           hover:shadow-xl hover:shadow-navy-700/30 hover:-translate-y-0.5
+           bg-gradient-to-r from-navy-600 to-navy-700 hover:from-navy-700 hover:to-navy-800
+           transition-all duration-300 shadow-lg shadow-navy-600/25
+           hover:shadow-xl hover:shadow-navy-600/30 hover:-translate-y-0.5
            active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
   }
 
@@ -66,7 +66,7 @@
   }
 
   .card-dark {
-    @apply bg-navy-900/50 rounded-2xl shadow-lg border border-navy-700/30
+    @apply bg-navy-700/50 rounded-2xl shadow-lg border border-navy-600/30
            backdrop-blur-sm hover:border-gold-400/20 transition-all duration-300;
   }
 
@@ -91,7 +91,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-navy-700 via-navy-600 to-gold-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-navy-600 via-navy-500 to-gold-500 bg-clip-text text-transparent;
   }
 
   .input-field {

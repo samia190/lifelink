@@ -34,9 +34,9 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-900 text-white">
+    <footer className="bg-navy-700 text-white">
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-navy-800 to-navy-900 border-b border-navy-700/50">
+      <div className="bg-gradient-to-r from-navy-600 to-navy-700 border-b border-navy-500/50">
         <div className="container-custom py-16 text-center">
           <h2 className="heading-2 text-white mb-4">
             Ready to Start Your <span className="text-gold-400">Healing Journey</span>?

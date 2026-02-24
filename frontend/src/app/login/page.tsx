@@ -81,7 +81,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left - Brand */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 items-center justify-center p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-navy-700 via-navy-600 to-navy-800 items-center justify-center p-12">
         <div className="max-w-md text-center">
           <div className="w-16 h-16 rounded-2xl overflow-hidden mx-auto mb-6">
             <Image src="/logo.jpeg" alt="LifeLink Logo" width={64} height={64} className="w-full h-full object-cover" />

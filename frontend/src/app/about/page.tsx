@@ -43,7 +43,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-navy-900 section-padding">
+      <section className="bg-gradient-to-br from-navy-700 via-navy-600 to-navy-800 section-padding">
         <div className="container-custom grid md:grid-cols-2 gap-12">
           <AnimateInView animation="fade-left" className="card-dark p-8">
             <h3 className="text-gold-400 font-display text-2xl font-bold mb-4">Our Mission</h3>
@@ -96,7 +96,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, i) => (
               <AnimateInView key={i} delay={i} className="card p-6 text-center">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 mx-auto mb-4 flex items-center justify-center text-2xl font-display font-bold text-gold-400">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-navy-500 to-navy-700 mx-auto mb-4 flex items-center justify-center text-2xl font-display font-bold text-gold-400">
                   {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <h3 className="font-semibold text-navy-800">{member.name}</h3>
@@ -110,7 +110,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-navy-800 to-navy-900 section-padding">
+      <section className="bg-gradient-to-r from-navy-600 to-navy-700 section-padding">
         <div className="container-custom text-center">
           <h2 className="heading-2 text-white mb-4">Join Our Journey</h2>
           <p className="text-navy-300 max-w-xl mx-auto mb-8">
