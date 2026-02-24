@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  // ─── Render: Standalone output for containerized deployment ───
+  output: 'standalone',
+
   // ─── Performance: Compression ───
   compress: true,
 
@@ -79,10 +82,11 @@ const nextConfig = {
   },
 
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
     return [
       {
         source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/:path*`,
+        destination: `${apiUrl}/:path*`,
       },
     ];
   },

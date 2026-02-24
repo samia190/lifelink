@@ -34,11 +34,12 @@ Thumbs.db
 *.swp
 *.swo
 
-# Prisma
-prisma/migrations/
+# Prisma (keep migrations — required for production deploys)
+# prisma/migrations/
 
 # Uploads
-uploads/
+uploads/*
+!uploads/.gitkeep
 temp/
 
 # SSL
@@ -46,3 +47,9 @@ temp/
 *.key
 *.crt
 *.csr
+
+# Credentials
+LOGIN_CREDENTIALS.txt
+
+# Logs dir
+backend/logs/*.log

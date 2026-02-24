@@ -5,7 +5,21 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
+// In production (Render), env vars are injected directly.
+// In development, load from .env at project root or backend root.
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+// ── Validate critical secrets in production ──
+if (isProduction) {
+  const required = ['DATABASE_URL', 'JWT_SECRET', 'JWT_REFRESH_SECRET'];
+  const missing = required.filter(k => !process.env[k]);
+  if (missing.length > 0) {
+    throw new Error(`Missing required env vars in production: ${missing.join(', ')}`);
+  }
+}
 
 const config = {
   app: {
@@ -13,8 +27,9 @@ const config = {
     url: process.env.APP_URL || 'http://localhost:3000',
     apiUrl: process.env.API_URL || 'http://localhost:4000',
     port: parseInt(process.env.PORT || '4000', 10),
+    trustProxy: process.env.TRUST_PROXY === 'true' || process.env.NODE_ENV === 'production',
     env: process.env.NODE_ENV || 'development',
-    isProduction: process.env.NODE_ENV === 'production',
+    isProduction,
   },
   db: {
     url: process.env.DATABASE_URL || '',

@@ -23,13 +23,30 @@ import { AutomationEngine } from './services/automation.service';
 const app = express();
 const httpServer = createServer(app);
 
+// Trust proxy (required for Render, Railway, etc.)
+if (config.app.trustProxy) {
+  app.set('trust proxy', 1);
+}
+
+// Build allowed origins list from config
+const allowedOrigins = [config.app.url, 'http://localhost:3000'];
+if (process.env.RENDER_EXTERNAL_URL) {
+  allowedOrigins.push(process.env.RENDER_EXTERNAL_URL);
+}
+if (process.env.CORS_ORIGINS) {
+  allowedOrigins.push(...process.env.CORS_ORIGINS.split(',').map(s => s.trim()));
+}
+
 // Socket.IO for real-time features
 const io = new SocketServer(httpServer, {
   cors: {
-    origin: config.app.url,
+    origin: allowedOrigins.filter(Boolean),
     methods: ['GET', 'POST'],
     credentials: true,
   },
+  transports: ['websocket', 'polling'],
+  pingTimeout: 60000,
+  pingInterval: 25000,
 });
 
 // ===== SECURITY MIDDLEWARE =====
@@ -39,7 +56,7 @@ app.use(helmet({
 }));
 
 app.use(cors({
-  origin: [config.app.url, 'http://localhost:3000'],
+  origin: allowedOrigins.filter(Boolean),
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
@@ -92,14 +109,25 @@ import path from 'path';
 app.use('/uploads', express.static(path.resolve(__dirname, '../uploads')));
 
 // ===== HEALTH CHECK =====
-app.get('/health', (_req, res) => {
-  res.status(200).json({
-    success: true,
+app.get('/health', async (_req, res) => {
+  let dbStatus = 'unknown';
+  try {
+    await prisma.$queryRaw`SELECT 1`;
+    dbStatus = 'connected';
+  } catch {
+    dbStatus = 'disconnected';
+  }
+
+  const healthy = dbStatus === 'connected';
+  res.status(healthy ? 200 : 503).json({
+    success: healthy,
     service: 'LifeLink API',
-    status: 'healthy',
+    status: healthy ? 'healthy' : 'degraded',
     timestamp: new Date().toISOString(),
     version: '1.0.0',
     environment: config.app.env,
+    database: dbStatus,
+    uptime: process.uptime(),
   });
 });
 
@@ -191,19 +219,19 @@ const start = async () => {
 };
 
 // Handle graceful shutdown
-process.on('SIGINT', async () => {
-  logger.info('Shutting down gracefully...');
-  await prisma.$disconnect();
-  httpServer.close(() => {
+const gracefulShutdown = async (signal: string) => {
+  logger.info(`${signal} received. Shutting down gracefully...`);
+  httpServer.close(async () => {
+    await prisma.$disconnect();
     logger.info('Server closed');
     process.exit(0);
   });
-});
+  // Force exit after 30s
+  setTimeout(() => process.exit(1), 30000);
+};
 
-process.on('SIGTERM', async () => {
-  await prisma.$disconnect();
-  httpServer.close(() => process.exit(0));
-});
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 
 process.on('unhandledRejection', (reason: any) => {
   logger.error('Unhandled Rejection:', reason);

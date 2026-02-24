@@ -40,6 +40,13 @@ if (!config.app.isProduction) {
       format: combine(colorize(), logFormat),
     })
   );
+} else {
+  // In production (Render), log to stdout/stderr for log aggregation
+  logger.add(
+    new winston.transports.Console({
+      format: combine(logFormat),
+    })
+  );
 }
 
 export default logger;
