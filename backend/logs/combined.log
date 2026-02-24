@@ -1547,3 +1547,97 @@ Validation Error Count: 1
 Validation Error Count: 1
     at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
     at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:44:56 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:44:58 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:00 [info]: ✅ Database connected successfully
+2026-02-24 12:45:00 [info]: 🤖 Automation Engine initialized
+2026-02-24 12:45:00 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-24 12:44:56 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:44:56 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:01 [info]: ✅ Database connected successfully
+2026-02-24 12:45:01 [info]: ✅ Database connected successfully
+2026-02-24 12:45:02 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:02 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:05 [info]: ✅ Database connected successfully
+2026-02-24 12:45:05 [info]: ✅ Database connected successfully
+2026-02-24 12:45:03 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:03 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:45:06 [info]: ✅ Database connected successfully
+2026-02-24 12:45:06 [info]: ✅ Database connected successfully
+2026-02-24 12:47:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:00 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:02 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:03 [info]: ✅ Database connected successfully
+2026-02-24 12:47:03 [info]: 🤖 Automation Engine initialized
+2026-02-24 12:47:03 [info]: 
+╔══════════════════════════════════════════════════╗
+║                                                  ║
+║    🏥 LIFELINK MENTAL MEDICAL CENTER            ║
+║    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━             ║
+║                                                  ║
+║    API Server running on port 4000             ║
+║    Environment: development                    ║
+║    API URL: http://localhost:4000            ║
+║                                                  ║
+║    Modules:                                      ║
+║    ✅ Authentication & 2FA                       ║
+║    ✅ Patient Management System                  ║
+║    ✅ Appointment Scheduling                     ║
+║    ✅ Telehealth Video System                    ║
+║    ✅ AI Chat & Crisis Detection                 ║
+║    ✅ M-Pesa & Card Payments                    ║
+║    ✅ Business Intelligence Dashboard            ║
+║    ✅ Corporate Wellness Module                  ║
+║    ✅ Webinar & Teaching Hub                     ║
+║    ✅ Automation Engine                          ║
+║    ✅ Real-time Notifications                    ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+      
+2026-02-24 12:47:03 [info]: ✅ Database connected successfully
+2026-02-24 12:47:01 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:03 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:04 [info]: ✅ Database connected successfully
+2026-02-24 12:47:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:05 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:07 [info]: ✅ Database connected successfully
+2026-02-24 12:47:04 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:06 [warn]: Twilio credentials not configured - telehealth features disabled
+2026-02-24 12:47:07 [info]: ✅ Database connected successfully
+2026-02-24 12:47:07 [info]: ✅ Database connected successfully
+2026-02-24 12:47:07 [info]: ✅ Database connected successfully

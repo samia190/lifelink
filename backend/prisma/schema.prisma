@@ -158,7 +158,6 @@ model User {
   chatMessages      ChatMessage[]
   corporateManager  CorporateAccount? @relation("CorporateManager")
 
-  @@index([email])
   @@index([role])
   @@map("users")
 }
@@ -200,7 +199,6 @@ model RefreshSession {
 
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([token])
   @@map("refresh_sessions")
 }
 
@@ -243,7 +241,6 @@ model Patient {
   documents             PatientDocument[]
   corporateEmployee     CorporateEmployee?
 
-  @@index([patientNumber])
   @@index([assignedDoctorId])
   @@map("patients")
 }
@@ -558,7 +555,6 @@ model Payment {
 
   appointment       Appointment?    @relation(fields: [appointmentId], references: [id])
 
-  @@index([transactionId])
   @@index([status])
   @@map("payments")
 }
@@ -863,7 +859,6 @@ model BlogPost {
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 
-  @@index([slug])
   @@map("blog_posts")
 }
 

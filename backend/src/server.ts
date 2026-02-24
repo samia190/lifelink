@@ -112,7 +112,7 @@ app.use('/uploads', express.static(path.resolve(__dirname, '../uploads')));
 app.get('/health', async (_req, res) => {
   let dbStatus = 'unknown';
   try {
-    await prisma.$runCommandRaw({ ping: 1 });
+    await prisma.$connect();
     dbStatus = 'connected';
   } catch {
     dbStatus = 'disconnected';

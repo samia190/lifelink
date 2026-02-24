@@ -908,3 +908,63 @@ Validation Error Count: 1
 Validation Error Count: 1
     at t (C:\Users\User\OneDrive\Desktop\lifelink\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
     at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:182:5)
+2026-02-24 12:45:01 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:45:01 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:45:06 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:45:06 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:45:07 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:45:07 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:47:03 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:47:04 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:47:07 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:47:07 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:47:07 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
+2026-02-24 12:47:07 [error]: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at start (C:\Users\User\OneDrive\Desktop\lifelink\backend\src\server.ts:188:16)
