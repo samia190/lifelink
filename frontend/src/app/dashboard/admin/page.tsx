@@ -8,7 +8,7 @@ import {
   Users, Calendar, DollarSign,
   AlertTriangle, Building2, Settings,
   Bell, Shield, FileText, Video, Search,
-  Layers, Loader2, Menu, LogOut, X, Presentation
+  Layers, Loader2, Menu, LogOut, X, Presentation, Heart
 } from 'lucide-react';
 import { useAuthStore } from '@/lib/store';
 import { dashboardAPI, notificationAPI } from '@/lib/api';
