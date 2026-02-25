@@ -478,7 +478,7 @@ lifelink/
 
 **LifeLink Mental Wellness Solution**
 - 📍 Nairobi, Kenya
-- 📞 +254 700 LIFELINK
+- 📞 +254724 927304 LIFELINK
 - 📧 info@lifelink.co.ke
 - 🌐 www.lifelink.co.ke
 - 🆘 Crisis Line: +254 722 178 177

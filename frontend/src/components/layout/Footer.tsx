@@ -70,7 +70,7 @@ export default function Footer() {
                   LIFE<span className="text-gold-400">LINK</span>
                 </span>
                 <p className="text-[10px] tracking-wider uppercase text-navy-400">
-                  Mental Medical Center
+                  Mental Wellness Solution
                 </p>
               </div>
             </Link>
@@ -79,8 +79,8 @@ export default function Footer() {
               excellence with compassionate care to transform lives across East Africa.
             </p>
             <div className="space-y-3">
-              <a href="tel:+254700000000" className="flex items-center gap-3 text-navy-300 hover:text-gold-400 transition-colors">
-                <Phone size={16} /> +254 700 000 000
+              <a href="tel:+254724 927304" className="flex items-center gap-3 text-navy-300 hover:text-gold-400 transition-colors">
+                <Phone size={16} /> +254724 927304
               </a>
               <a href="mailto:info@lifelink.co.ke" className="flex items-center gap-3 text-navy-300 hover:text-gold-400 transition-colors">
                 <Mail size={16} /> info@lifelink.co.ke
@@ -171,7 +171,7 @@ export default function Footer() {
         <div className="mt-4 p-4 rounded-xl bg-red-900/20 border border-red-800/30 text-center">
           <p className="text-red-300 text-sm">
             <strong>🆘 In a mental health crisis?</strong>{' '}
-            Call our 24/7 helpline: <a href="tel:+254700000000" className="text-red-200 underline font-semibold">+254 700 000 000</a>{' '}
+            Call our 24/7 helpline: <a href="tel:+254724 927304" className="text-red-200 underline font-semibold">+254724 927304</a>{' '}
             or visit our <Link href="/emergency" className="text-red-200 underline font-semibold">Emergency Help Page</Link>
           </p>
         </div>

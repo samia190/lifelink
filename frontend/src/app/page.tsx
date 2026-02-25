@@ -376,7 +376,7 @@ export default function HomePage() {
                 <Calendar size={22} />
                 Book Your Session
               </Link>
-              <a href="tel:+254700000000" className="btn-outline border-white/30 text-white hover:bg-white hover:text-navy-900 text-lg px-10 py-4 gap-2">
+              <a href="tel:+254724 927304" className="btn-outline border-white/30 text-white hover:bg-white hover:text-navy-900 text-lg px-10 py-4 gap-2">
                 <Phone size={22} />
                 Call Us Now
               </a>

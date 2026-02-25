@@ -37,7 +37,7 @@ export default function AIChatWidget() {
     } catch {
       addMessage({
         role: 'assistant',
-        content: 'I apologize, I\'m having trouble connecting. If you\'re in crisis, please call our helpline at +254 700 000 000.',
+        content: 'I apologize, I\'m having trouble connecting. If you\'re in crisis, please call our helpline at +254724 927304.',
       });
     } finally {
       setIsLoading(false);
@@ -100,7 +100,7 @@ export default function AIChatWidget() {
                 <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
                   <p className="text-xs text-amber-700 flex items-center gap-1">
                     <AlertTriangle size={12} />
-                    In a crisis? Call <a href="tel:+254700000000" className="font-bold underline">+254 700 000 000</a>
+                    In a crisis? Call <a href="tel:+254724 927304" className="font-bold underline">+254724 927304</a>
                   </p>
                 </div>
               </div>

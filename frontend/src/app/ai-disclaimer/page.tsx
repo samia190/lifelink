@@ -24,7 +24,7 @@ export default function AIDisclaimerPage() {
           </ul>
 
           <h2 className="text-xl font-semibold text-navy-800">Crisis Situations</h2>
-          <p>If the AI detects signs of crisis, it will recommend immediate professional help. However, if you are in immediate danger, please call 999, visit your nearest hospital, or call our 24/7 helpline at +254 700 000 000.</p>
+          <p>If the AI detects signs of crisis, it will recommend immediate professional help. However, if you are in immediate danger, please call 999, visit your nearest hospital, or call our 24/7 helpline at <a href="tel:+254724927304" className="text-red-700 font-bold text-lg hover:underline">+254 724 927 304</a>.</p>
 
           <h2 className="text-xl font-semibold text-navy-800">Data Handling</h2>
           <p>AI conversations are processed securely and may be reviewed by our clinical team to improve care quality. All data handling complies with the Kenya Data Protection Act.</p>

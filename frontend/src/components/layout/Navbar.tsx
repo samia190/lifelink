@@ -74,9 +74,9 @@ export default function Navbar() {
         <div className="bg-navy-700 text-white text-sm">
           <div className="container-custom flex items-center justify-between py-2">
             <div className="flex items-center gap-4">
-              <a href="tel:+254700000000" className="flex items-center gap-1 hover:text-gold-400 transition-colors">
+              <a href="tel:+254724 927304" className="flex items-center gap-1 hover:text-gold-400 transition-colors">
                 <Phone size={14} />
-                <span>+254 700 000 000</span>
+                <span>+254724 927304</span>
               </a>
               <span className="hidden sm:inline text-navy-400">|</span>
               <span className="hidden sm:inline text-navy-300">24/7 Crisis Support Available</span>
@@ -103,7 +103,7 @@ export default function Navbar() {
                 LIFE<span className="text-gold-500">LINK</span>
               </span>
               <p className={`text-[10px] tracking-wider uppercase leading-none ${isScrolled ? 'text-charcoal-500' : 'text-charcoal-500'}`}>
-                Mental Medical Center
+                Mental Wellness Solution
               </p>
             </div>
           </Link>

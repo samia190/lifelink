@@ -38,9 +38,9 @@ export default function ContactPage() {
           {/* Contact Info */}
           <AnimateInView animation="fade-left" className="space-y-6">
             {[
-              { icon: Phone, title: 'Phone', lines: ['+254 700 000 000', '+254 711 000 000'], href: 'tel:+254700000000' },
+              { icon: Phone, title: 'Phone', lines: ['+254724 927304', '+254724 927304'], href: 'tel:+254724 927304' },
               { icon: Mail, title: 'Email', lines: ['info@lifelink.co.ke', 'appointments@lifelink.co.ke'], href: 'mailto:info@lifelink.co.ke' },
-              { icon: MapPin, title: 'Location', lines: ['LifeLink Medical Center', 'Westlands, Nairobi, Kenya'] },
+              { icon: MapPin, title: 'Location', lines: ['LifeLink Mental Wellness Solution', 'Westlands, Nairobi, Kenya'] },
               { icon: Clock, title: 'Hours', lines: ['Mon - Fri: 8:00 AM - 8:00 PM', 'Sat: 9:00 AM - 5:00 PM', 'Sun: Emergency Only'] },
             ].map((item, i) => (
               <div key={i} className="card p-6">
@@ -64,8 +64,8 @@ export default function ContactPage() {
               <p className="text-red-600 text-sm mb-2">
                 If you or someone you know is in immediate danger, please call our 24/7 helpline:
               </p>
-              <a href="tel:+254700000000" className="text-red-700 font-bold text-lg hover:underline">
-                +254 700 000 000
+              <a href="tel:+254724 927304" className="text-red-700 font-bold text-lg hover:underline">
+                +254724 927304
               </a>
             </div>
           </AnimateInView>

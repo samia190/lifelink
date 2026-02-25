@@ -17,7 +17,7 @@ async function main() {
     update: {},
     create: {
       email: 'admin@lifelink.co.ke',
-      phone: '+254700000001',
+      phone: '+254724 927304',
       passwordHash: adminPassword,
       role: 'SUPER_ADMIN',
       isActive: true,
@@ -40,7 +40,7 @@ async function main() {
   const doctorData = [
     {
       email: 'dr.wanjiku@lifelink.co.ke',
-      phone: '+254700000002',
+      phone: '+254724 927304',
       firstName: 'Wanjiku',
       lastName: 'Kamau',
       specialization: ['Psychiatry', 'Depression', 'Anxiety'],
@@ -52,7 +52,7 @@ async function main() {
     },
     {
       email: 'dr.odhiambo@lifelink.co.ke',
-      phone: '+254700000003',
+      phone: '+254724 927304',
       firstName: 'Brian',
       lastName: 'Odhiambo',
       specialization: ['Clinical Psychology', 'Trauma', 'PTSD'],
@@ -64,7 +64,7 @@ async function main() {
     },
     {
       email: 'dr.mwangi@lifelink.co.ke',
-      phone: '+254700000004',
+      phone: '+254724 927304',
       firstName: 'Grace',
       lastName: 'Mwangi',
       specialization: ['Family Therapy', 'Couples Counseling', 'Child Psychology'],

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Phone, AlertTriangle, Heart, Shield, ExternalLink } from 'lucide-react';
 
 const emergencyContacts = [
-  { name: 'LifeLink Crisis Helpline', phone: '+254 700 000 000', available: '24/7', primary: true },
+  { name: 'LifeLink Crisis Helpline', phone: '+254724 927304', available: '24/7', primary: true },
   { name: 'Kenya Red Cross', phone: '1199', available: '24/7' },
   { name: 'Befrienders Kenya', phone: '+254 722 178 177', available: '24/7' },
   { name: 'Kenya National Police', phone: '999 / 112', available: '24/7' },

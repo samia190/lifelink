@@ -188,7 +188,7 @@ export class EmailService {
       <div style="max-width:600px;margin:0 auto;background:#ffffff;">
         <div style="background:linear-gradient(135deg,#1a365d 0%,#2d3748 100%);padding:24px;text-align:center;">
           <h1 style="color:#d4af37;margin:0;font-size:24px;letter-spacing:2px;">LIFELINK</h1>
-          <p style="color:#e2e8f0;margin:4px 0 0;font-size:12px;letter-spacing:1px;">MENTAL MEDICAL CENTER</p>
+          <p style="color:#e2e8f0;margin:4px 0 0;font-size:12px;letter-spacing:1px;">MENTAL WELLNESS SOLUTION</p>
         </div>
         <div style="padding:32px 24px;">
           ${content}
